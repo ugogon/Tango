@@ -3,13 +3,17 @@
 FROM ubuntu:20.04
 MAINTAINER TU-Berlin Computer Graphics Team <sekr@cg.tu-berlin.de>
 
+RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Install Python
 #RUN apt-get update && apt-get install -y wget
 #RUN wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
 #RUN mkdir /env
 #RUN micromamba install -p /env python=3.9 c-compiler pip -c conda-forge
 #SHELL ["bash", "-c"]
-#RUN echo 'eval "$(micromamba shell hook -s bash)" && micromamba activate /env' >> ~/.bashrc 
+#RUN echo 'eval "$(micromamba shell hook -s bash)" && micromamba activate /env' >> ~/.bashrc
 
 #RUN eval "$(micromamba shell hook -s bash)" && micromamba activate /env && pip install numpy matplotlib pillow beautifulsoup4
 
@@ -47,4 +51,3 @@ RUN apt-get remove -y git && apt-get -y autoremove && rm -rf Tango/
 # Check installation
 RUN ls -l /home
 RUN which autodriver
-
