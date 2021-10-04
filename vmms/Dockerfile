@@ -18,7 +18,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 #RUN eval "$(micromamba shell hook -s bash)" && micromamba activate /env && pip install numpy matplotlib pillow beautifulsoup4
 
 RUN apt-get update && apt-get install -y python3.9 python3.9-dev build-essential python3-pip
-RUN pip3 install numpy matplotlib pillow beautifulsoup4
+RUN pip3 install numpy matplotlib pillow beautifulsoup4 dill fuzzywuzzy python-Levenshtein sympy antlr4-python3-runtime==4.7.2
 
 
 RUN apt-get update && apt-get install -y \
