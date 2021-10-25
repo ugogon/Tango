@@ -26,7 +26,7 @@ class Config(object):
     PORT = 3000
 
     # Log file. Setting this to None sends the server output to stdout
-    LOGFILE = None
+    LOGFILE = "debug.log"
 
     # Logging level
     LOGLEVEL = logging.DEBUG
@@ -112,7 +112,7 @@ class Config(object):
     CREATEVM_SECS = 1
 
     # Default vm pool size
-    POOL_SIZE = 2
+    POOL_SIZE = 6
 
     # Optionally log finer-grained timing information
     LOG_TIMING = False
