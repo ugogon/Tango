@@ -7,6 +7,14 @@ RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  git \
+  make \
+  sudo \
+  && rm -rf /var/lib/apt/lists/*
+
+
 # Install Python
 #RUN apt-get update && apt-get install -y wget
 #RUN wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
@@ -17,16 +25,13 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 #RUN eval "$(micromamba shell hook -s bash)" && micromamba activate /env && pip install numpy matplotlib pillow beautifulsoup4
 
-RUN apt-get update && apt-get install -y python3.9 python3.9-dev build-essential python3-pip
-RUN pip3 install numpy matplotlib pillow beautifulsoup4 dill fuzzywuzzy python-Levenshtein sympy antlr4-python3-runtime==4.7.2
+# RUN apt-get update  && apt-get install -y python3.9 python3.9-dev build-essential python3-pip
+
+RUN apt-get update  && apt-get install -y python3-pip gnuplot
+RUN pip3 install numpy matplotlib pillow beautifulsoup4 dill fuzzywuzzy python-Levenshtein sympy antlr4-python3-runtime==4.7.2 
 
 
-RUN apt-get update && apt-get install -y \
-  build-essential \
-  git \
-  make \
-  sudo \
-  && rm -rf /var/lib/apt/lists/*
+
 
 # Install autodriver
 WORKDIR /home
