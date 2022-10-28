@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 # RUN apt-get update  && apt-get install -y python3.9 python3.9-dev build-essential python3-pip
 
 RUN apt-get update  && apt-get install -y python3-pip gnuplot
-RUN pip3 install numpy matplotlib pillow beautifulsoup4 dill fuzzywuzzy python-Levenshtein sympy antlr4-python3-runtime==4.7.2 
+RUN pip3 install numpy matplotlib pillow beautifulsoup4 dill fuzzywuzzy python-Levenshtein sympy antlr4-python3-runtime==4.7.2 scipy thefuzz jinja2 markdown fs
 
 
 
