@@ -1,6 +1,6 @@
 # Autolab - autograding docker image
 
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 MAINTAINER TU-Berlin Computer Graphics Team <sekr@cg.tu-berlin.de>
 
 RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
